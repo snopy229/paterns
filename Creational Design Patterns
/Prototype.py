@@ -1,5 +1,3 @@
-import copy
-
 class Airplane:
     def __init__(self, wing_size = 11, max_speed = 260, range = 1000):
         self.wing_size = wing_size
