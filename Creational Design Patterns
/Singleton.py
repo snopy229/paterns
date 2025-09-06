@@ -12,7 +12,9 @@ class VideoSettings:
         self.speed = speed 
 
     def output(self):
-        print(f"Resolution: {self.resolution}p, Volume: {self.volume}%, Speed: {self.speed}x")
+        print(f"Resolution: {self.resolution}p,") 
+        print(f"Volume: {self.volume}%,") 
+        print(f"Speed: {self.speed}x \n")
 
 if __name__ == "__main__":
     a = VideoSettings(360, 25, 1.5)
