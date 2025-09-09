@@ -7,18 +7,18 @@ class Flashlight:
     def turn_on(self):
         print("Flashlight is turned on")
 
-class Command(ABC):
+class ICommand(ABC):
     def action(self):
         pass
 
-class CommandTurnOff(Command):
+class CommandTurnOff(ICommand):
     def __init__(self):
         self.flashlight = Flashlight()
 
     def action(self):
         self.flashlight.turn_off()
 
-class CommandTurnOn(Command):
+class CommandTurnOn(ICommand):
     def __init__(self):
         self.flashlight = Flashlight()
 

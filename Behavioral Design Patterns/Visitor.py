@@ -1,25 +1,25 @@
 from abc import ABC, abstractmethod
 
-class Shape(ABC):
+class IShape(ABC):
     @abstractmethod
     def accept(self, visitor):
         pass
 
-class Circle(Shape):
+class Circle(IShape):
     def __init__(self, radius):
         self.radius = radius
     
     def accept(self, visitor):
         visitor.visit_circle(self)
 
-class Square(Shape):
+class Square(IShape):
     def __init__(self, side):
         self.side = side
     
     def accept(self, visitor):
         visitor.visit_square(self)
 
-class Visitor(ABC):
+class IVisitor(ABC):
     @abstractmethod
     def visit_circle(self, circle):
         pass
@@ -29,7 +29,7 @@ class Visitor(ABC):
         pass
 
 
-class AreaCalculator(Visitor):
+class AreaCalculator(IVisitor):
     def visit_circle(self, circle):
         area = 3.14 * circle.radius ** 2
         print(f"Area of the circle: {area}")
@@ -38,7 +38,7 @@ class AreaCalculator(Visitor):
         area = square.side ** 2
         print(f"Area of the square: {area}")
 
-class PerimeterCalculator(Visitor):
+class PerimeterCalculator(IVisitor):
     def visit_circle(self, circle):
         perimeter = 2 * 3.14 * circle.radius
         print(f"Perimeter of the circle: {perimeter}")

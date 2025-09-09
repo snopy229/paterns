@@ -1,17 +1,17 @@
 from abc import ABC , abstractmethod
 
-class State(ABC):
+class IState(ABC):
     @abstractmethod
     def press(self, button):
         pass
 
-class OnState(State):
+class OnState(IState):
     def press(self, button):
         print("Light was turned on")
         button.state = OffState()
     
 
-class OffState(State):
+class OffState(IState):
     def press(self, button):
         print("Light was turned off")
         button.state = OnState()

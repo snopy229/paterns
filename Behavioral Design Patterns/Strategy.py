@@ -1,19 +1,19 @@
 from abc import ABC, abstractmethod
 
-class SoundStrategy(ABC):
+class ISoundStrategy(ABC):
     @abstractmethod
     def make_sound(self):
         pass
 
-class DogSound(SoundStrategy):
+class DogSound(ISoundStrategy):
     def make_sound(self):
         return "Wool-woof"
     
-class CatSound(SoundStrategy):
+class CatSound(ISoundStrategy):
     def make_sound(self):
         return "Meow-meow"
     
-class DuckSound(SoundStrategy):
+class DuckSound(ISoundStrategy):
     def make_sound(self):
         return "Quack-quack"
     

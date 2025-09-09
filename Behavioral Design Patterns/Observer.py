@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-class Observer(ABC):
+class IObserver(ABC):
     @abstractmethod
     def update(self, message):
         pass
 
-class Subject(ABC):
+class ISubject(ABC):
     @abstractmethod
     def attach(self, observer):
         pass
@@ -18,7 +18,7 @@ class Subject(ABC):
     def notify(self, message):
         pass
 
-class News(Subject):
+class News(ISubject):
     def __init__(self):
         self._observer = []
 
@@ -36,7 +36,7 @@ class News(Subject):
         print("The news was published: {news}")
         self.notify(news)
 
-class User(Observer):
+class User(IObserver):
     def __init__(self, name):
         self.name = name
 
